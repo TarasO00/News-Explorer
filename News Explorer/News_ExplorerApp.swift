@@ -14,4 +14,5 @@ struct News_ExplorerApp: App {
             ContentView()
         }
     }
+    
 }
