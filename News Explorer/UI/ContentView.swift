@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var vm = ViewModel()
+    @StateObject private var vm = ArticleViewModel()
     
     var body: some View {
         NavigationView {
@@ -16,18 +16,19 @@ struct ContentView: View {
                         Text(item.description)
                     }
                     .padding([.top, .bottom])
-                }.listRowSeparator(.hidden)
-                    .listRowBackground(
+                }
+                .listRowSeparator(.hidden)
+                .listRowBackground(
                         RoundedRectangle(cornerRadius: 10)
                             .background(.clear)
                             .foregroundStyle(CustomColors.wheat)
                             .padding(7)
-                    )
+                )
             }
             .listStyle(.plain)
             .navigationTitle("Articles")
             .toolbar {
-                Button(action: {}) {
+                NavigationLink(destination: SearchView(vm: vm)) {
                     Image(systemName: "magnifyingglass")
                 }
             }

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Article: Identifiable {
-    var id: UUID
+struct Article: Identifiable, Decodable {
+    var id = UUID()
     
     let source: Source
     let author: String?
@@ -18,6 +18,10 @@ struct Article: Identifiable {
     let urlToImage: URL?
     let publishedAt: Date
     let content: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case source, author, title, description, url, urlToImage, publishedAt, content
+    }
     
     static var exampleArticle = Article(
         id: UUID(),
