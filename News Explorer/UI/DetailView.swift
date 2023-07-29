@@ -12,9 +12,9 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            if let imgUrl = article.urlToImage {
+            if article.urlToImage != nil {
                 AsyncImage(
-                    url: imgUrl,
+                    url: article.urlToImage,
                     content: {
                         image in image
                             .resizable()

@@ -32,6 +32,10 @@ struct ContentView: View {
                     Image(systemName: "magnifyingglass")
                 }
             }
+            .refreshable {
+                vm.refresh()
+            }
+            Text(String(vm.currentPage))
         }
         
     }
