@@ -22,7 +22,7 @@ final class ApiManager {
                     if let error = error { completion(.failure(error)) }
                     return
                 }
-                
+
                 do {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .iso8601

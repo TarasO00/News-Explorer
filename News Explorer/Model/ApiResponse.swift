@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ApiReponse: Decodable {
+struct ApiResponse: Decodable {
     let status: String
     let totalResults: Int
     let articles: [Article]
